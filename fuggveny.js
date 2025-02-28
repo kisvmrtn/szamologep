@@ -71,8 +71,9 @@ export const muvJelKiir = () => {
                 eredmenyElem.append(`= ${kivonas()}`)
                 break;
             case kifejezesElem.innerHTML.includes('*'):
-                kifejezesTagok.push(kifejezesElem.textContent.split('*'))
-                console.log(kifejezesTagok[0])
+                let idgElemek3 = kifejezesElem.textContent.split('*')
+                kifejezesTagok.push(idgElemek3.map(Number))
+                eredmenyElem.append(`= ${szorzas()}`)
                 break;
             case kifejezesElem.innerHTML.includes('/'):
                 kifejezesTagok.push(kifejezesElem.textContent.split('/'))
@@ -98,3 +99,10 @@ const kivonas = () => {
     return sum
 }
 
+const szorzas = () => {
+    let sum = kifejezesTagok[0][0]
+    for (let i = 1; i < kifejezesTagok[0].length; i++) {
+        sum = sum * kifejezesTagok[0][i]
+    }
+    return sum
+}
