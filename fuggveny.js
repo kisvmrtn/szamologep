@@ -62,6 +62,7 @@ export const muvJelKiir = () => {
             case kifejezesElem.innerHTML.includes('+'):
                 let idgElemek = kifejezesElem.textContent.split('+')
                 kifejezesTagok.push(idgElemek.map(Number))
+                console.log(kifejezesTagok)
                 eredmenyElem.append(`= ${osszeadas()}`)
                 break;
             case kifejezesElem.innerHTML.includes('-'):
@@ -84,7 +85,7 @@ export const muvJelKiir = () => {
 const osszeadas = () => {
     let sum = kifejezesTagok[0][0]
     for (let i = 1; i < kifejezesTagok[0].length; i++) {
-        sum += kifejezesTagok[0][1]
+        sum += kifejezesTagok[0][i]
     }
     return sum
 }
@@ -92,7 +93,8 @@ const osszeadas = () => {
 const kivonas = () => {
     let sum = kifejezesTagok[0][0]
     for (let i = 1; i < kifejezesTagok[0].length; i++) {
-        sum -= kifejezesTagok[0][1]
+        sum -= kifejezesTagok[0][i]
     }
     return sum
 }
+
