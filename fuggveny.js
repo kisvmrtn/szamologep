@@ -57,6 +57,9 @@ export const muvJelKiir = () => {
         eredmenyElem.innerHTML = ''
         kifejezesTagok.splice(-1)
     })
+}
+
+export const szamolasKiiras = () => {
     document.querySelector('#egyenlo').addEventListener('click', () => {
         switch(true) {
             case kifejezesElem.innerHTML.includes('+'):
