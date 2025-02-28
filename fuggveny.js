@@ -1,4 +1,4 @@
-import { Szamok } from "./tomb.js";
+
 
 const kifejezesTagok = []
 
@@ -76,8 +76,9 @@ export const muvJelKiir = () => {
                 eredmenyElem.append(`= ${szorzas()}`)
                 break;
             case kifejezesElem.innerHTML.includes('/'):
-                kifejezesTagok.push(kifejezesElem.textContent.split('/'))
-                console.log(kifejezesTagok)
+                let idgElemek4 = kifejezesElem.textContent.split('/')
+                kifejezesTagok.push(idgElemek4.map(Number))
+                eredmenyElem.append(`= ${osztas()}`)
                 break;
         }
     })
@@ -103,6 +104,14 @@ const szorzas = () => {
     let sum = kifejezesTagok[0][0]
     for (let i = 1; i < kifejezesTagok[0].length; i++) {
         sum = sum * kifejezesTagok[0][i]
+    }
+    return sum
+}
+
+const osztas = () => {
+    let sum = kifejezesTagok[0][0]
+    for (let i = 1; i < kifejezesTagok[0].length; i++) {
+        sum = sum / kifejezesTagok[0][i]
     }
     return sum
 }
