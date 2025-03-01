@@ -1,5 +1,10 @@
-import { szamKiir, muvJelKiir, szamolasKiiras } from "./fuggveny.js";
+import { szamKiir, adatTorles, szamolasKiiras, muvJelKiir } from "./fuggveny.js";
 
 szamKiir();
-muvJelKiir()
+muvJelKiir('#osszeadas', '+')
+muvJelKiir('#kivonas', '-')
+muvJelKiir('#szorzas', '*')
+muvJelKiir('#osztas', '/')
+muvJelKiir('#tiz', '.')
+adatTorles()
 szamolasKiiras();

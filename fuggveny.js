@@ -15,43 +15,16 @@ export const szamKiir = () => {
     }
 }
 
-export const muvJelKiir = () => {
-    
-    document.querySelector('#osszeadas').addEventListener('click', () => {
+export const muvJelKiir = (elemID, muvjel) => {
+    document.querySelector(elemID).addEventListener('click', () => {
         if (kifejezesElem.innerHTML.length === 0) {
             alert('Előszőr számot adj meg.')
         } else {
-            kifejezesElem.append('+')
+            kifejezesElem.append(muvjel)
         }
     })
-    document.querySelector('#kivonas').addEventListener('click', () => {
-        if (kifejezesElem.innerHTML.length === 0) {
-            alert('Előszőr számot adj meg.')
-        } else {
-            kifejezesElem.append('-')
-        }
-    })
-    document.querySelector('#szorzas').addEventListener('click', () => {
-        if (kifejezesElem.innerHTML.length === 0) {
-            alert('Előszőr számot adj meg.')
-        } else {
-            kifejezesElem.append('*')
-        }
-    })
-    document.querySelector('#osztas').addEventListener('click', () => {
-        if (kifejezesElem.innerHTML.length === 0) {
-            alert('Előszőr számot adj meg.')
-        } else {
-            kifejezesElem.append('/')
-        }
-    })
-    document.querySelector('#tiz').addEventListener('click', () => {
-        if (kifejezesElem.innerHTML.length === 0) {
-            alert('Előszőr számot adj meg.')
-        } else {
-            kifejezesElem.append('.')
-        }
-    })
+}
+export const adatTorles = () => {
     document.querySelector('#torles').addEventListener('click', () => {
         kifejezesElem.innerHTML = ''
         eredmenyElem.innerHTML = ''
@@ -103,7 +76,7 @@ const kivonas = () => {
     return sum
 }
 
-const szorzas = () => {
+const szorzas = (jel) => {
     let sum = kifejezesTagok[0][0]
     for (let i = 1; i < kifejezesTagok[0].length; i++) {
         sum = sum * kifejezesTagok[0][i]
